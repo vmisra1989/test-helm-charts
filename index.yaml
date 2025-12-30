@@ -1,0 +1,72 @@
+apiVersion: v1
+entries:
+  airflow:
+  - annotations:
+      category: WorkFlow
+      images: |
+        - name: airflow
+          image: docker.io/bitnami/airflow:3.0.5-debian-12-r0
+        - name: statsd-exporter
+          image: docker.io/bitnami/statsd-exporter:0.28.0-debian-12-r24
+      licenses: Apache-2.0
+      tanzuCategory: service
+    apiVersion: v2
+    appVersion: 3.0.5
+    created: "2025-12-30T13:17:40.248209+01:00"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 22.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 16.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Airflow is a tool to express and execute workflows as directed
+      acyclic graphs (DAGs). It includes utilities to schedule tasks, monitor task
+      progress and handle task dependencies.
+    digest: b3dfeaf95f1bc3e8b6fe46fef7132c0ef2ed42f4028796c02cde7082379c1ea4
+    home: https://bitnami.com
+    icon: https://dyltqmyl993wv.cloudfront.net/assets/stacks/airflow/img/airflow-stack-220x234.png
+    keywords:
+    - apache
+    - airflow
+    - workflow
+    - dag
+    maintainers:
+    - name: Broadcom, Inc. All Rights Reserved.
+      url: https://github.com/bitnami/charts
+    name: airflow
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/airflow
+    urls:
+    - https://vmisra1989.github.io/test-helm-charts/dist/airflow-25.0.2-cloudera.tgz
+    version: 25.0.2-cloudera
+  my-platform-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-30T13:17:40.249489+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 1c94207323d6de3ffe236945a0981e5e558406eee6aa85eed217bb03ad1dc8a3
+    name: my-platform-app
+    type: application
+    urls:
+    - https://vmisra1989.github.io/test-helm-charts/dist/my-platform-app-0.1.0.tgz
+    version: 0.1.0
+  mychart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-30T13:17:40.250477+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 0d5560d670677aca3750cc781d1462446536eb515220d6fc08c37e33ddf18aae
+    name: mychart
+    type: application
+    urls:
+    - https://vmisra1989.github.io/test-helm-charts/dist/mychart-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-30T13:17:40.22353+01:00"
